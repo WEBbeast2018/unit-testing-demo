@@ -30,45 +30,28 @@ export class SummaryComponent implements OnInit {
   }
 
   constructor(
-    private robotsService: RobotsService,
-    private partsService: PartsService
+    // private robotsService: RobotsService,
+    // private partsService: PartsService
   ) {
   }
 
   ngOnInit() {
-    this.robotsService.getRobots().subscribe((robots) => {
-      this.robots = robots;
-    });
-    this.partsService.getParts().subscribe((parts) => {
-      this.parts = parts;
-    });
+    // this.robotsService.getRobots().subscribe((robots) => {
+    //   this.robots = robots;
+    // });
+    // this.partsService.getParts().subscribe((parts) => {
+    //   this.parts = parts;
+    // });
     this.fillSummaryData();
   }
 
   fillSummaryData() {
-    this.summary.robots.howMany = null;
-    this.summary.robots.howManyGPU = SummaryComponent.filterByGPU();
-    this.summary.robots.firstByAge = SummaryComponent.sortByNumber();
-    this.summary.robots.firstByName = SummaryComponent.sortByString();
-    this.summary.robots.firstByType = SummaryComponent.sortByString();
-    // add summary.parts
+    // this.summary.robots.howMany = null;
+    // this.summary.robots.howManyGPU = SummaryComponent.filterByGPU();
+    // this.summary.robots.firstByAge = SummaryComponent.sortByNumber();
+    // this.summary.robots.firstByName = SummaryComponent.sortByString();
+    // this.summary.robots.firstByType = SummaryComponent.sortByString();
   }
 
 }
 
-/*
-<h3>Robots Summary</h3>
-<p>number of robots: </p>
-<p>number of robots with GPU engine:</p>
-<p>first robot (name) sorted by age</p>
-<p>first robot (name) sorted by name</p>
-<p>first robot (name) sorted by type</p>
-</section>
-
-<section>
-<h3>Parts Summary</h3>
-<p>number of parts: </p>
-<p>number of parts with GPU engine:</p>
-<p>first part (name) sorted by name</p>
-<p>first part (name) sorted by type</p>
-*/
