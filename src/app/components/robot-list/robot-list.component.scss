@@ -1,0 +1,25 @@
+@import "../shared.components.style";
+
+.robots-container {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    display: inline;
+  }
+
+  .robot-card {
+    @extend .card;
+    img {
+      margin: 5px 10px 5px 5px;
+    }
+    div {
+      display: flex;
+      &:first-child label {
+        padding-top: 10px;
+      }
+    }
+  }
+}

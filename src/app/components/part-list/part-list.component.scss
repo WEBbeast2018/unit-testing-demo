@@ -1,0 +1,25 @@
+@import "../shared.components.style";
+
+.parts-container {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+    display: inline;
+  }
+
+  .part-card {
+    @extend .card;
+    img {
+      margin: 5px;
+    }
+    div {
+      display: flex;
+      &:first-child label {
+        padding-top: 15px;
+      }
+    }
+  }
+}
