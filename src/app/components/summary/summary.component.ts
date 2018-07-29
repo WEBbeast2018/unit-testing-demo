@@ -47,10 +47,10 @@ export class SummaryComponent implements OnInit {
 
   fillSummaryData() {
     this.summary.robots.howMany = null;
-    this.summary.robots.howManyGPU = this.filterByGPU();
-    this.summary.robots.firstByAge = this.sortByNumber();
-    this.summary.robots.firstByName = this.sortByString();
-    this.summary.robots.firstByType = this.sortByString();
+    this.summary.robots.howManyGPU = SummaryComponent.filterByGPU();
+    this.summary.robots.firstByAge = SummaryComponent.sortByNumber();
+    this.summary.robots.firstByName = SummaryComponent.sortByString();
+    this.summary.robots.firstByType = SummaryComponent.sortByString();
     // add summary.parts
   }
 
