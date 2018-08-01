@@ -3,6 +3,8 @@ import { Robot } from '../../models/robot.model';
 import { RobotsService } from '../../services/robots.service';
 import { PartsService } from '../../services/parts.service';
 import { Part } from '../../models/part.model';
+import { ROBOTS } from '../../mocks/robots.mocks';
+import { PARTS } from '../../mocks/parts.mocks';
 
 @Component({
   selector: 'app-summary',
@@ -17,40 +19,50 @@ export class SummaryComponent implements OnInit {
   robots: Robot[];
   parts: Part[];
 
-  static filterByGPU() {
-    return null;
-  }
 
-  static sortByNumber() {
-    return null;
-  }
-
-  static sortByString() {
-    return null;
-  }
 
   constructor(
-    // private robotsService: RobotsService,
-    // private partsService: PartsService
+    private robotsService: RobotsService,
+    private partsService: PartsService
   ) {
   }
 
   ngOnInit() {
-    // this.robotsService.getRobots().subscribe((robots) => {
-    //   this.robots = robots;
-    // });
-    // this.partsService.getParts().subscribe((parts) => {
-    //   this.parts = parts;
-    // });
-    this.fillSummaryData();
+    // this.setRobotsData(ROBOTS);
+    // this.setPartsData(PARTS);
+
+    this.robotsService.getRobots().subscribe((robots) => {
+      this.setRobotsData(robots);
+    });
+    this.partsService.getParts().subscribe((parts) => {
+      this.setPartsData(parts);
+    });
   }
 
-  fillSummaryData() {
-    // this.summary.robots.howMany = null;
-    // this.summary.robots.howManyGPU = SummaryComponent.filterByGPU();
-    // this.summary.robots.firstByAge = SummaryComponent.sortByNumber();
-    // this.summary.robots.firstByName = SummaryComponent.sortByString();
-    // this.summary.robots.firstByType = SummaryComponent.sortByString();
+  setRobotsData(robots) {
+    this.robots = robots;
+    this.summary.robots = {
+      howManyGPU: this.filterByGPU(),
+      firstByName: this.sortByString(),
+      firstByType: this.sortByString(),
+      firstByAge: this.sortByNumber()
+    };
+  }
+
+  setPartsData(parts) {
+    this.parts = parts;
+  }
+
+  filterByGPU() {
+    return null;
+  }
+
+  sortByNumber() {
+    return null;
+  }
+
+  sortByString() {
+    return null;
   }
 
 }
