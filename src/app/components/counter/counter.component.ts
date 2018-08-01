@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   counter = 1;
+  min = 1;
+  max = 5;
 
   constructor() {
   }
@@ -16,10 +18,14 @@ export class CounterComponent implements OnInit {
   }
 
   incerement() {
-    this.counter++;
+    if (this.counter < this.max) {
+      this.counter++;
+    }
   }
 
   decrement() {
-    this.counter--;
+    if (this.counter > this.min) {
+      this.counter--;
+    }
   }
 }
