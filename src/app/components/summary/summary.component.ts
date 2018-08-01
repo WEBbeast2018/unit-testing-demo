@@ -42,10 +42,10 @@ export class SummaryComponent implements OnInit {
   setRobotsData(robots) {
     this.robots = robots;
     this.summary.robots = {
-      howManyGPU: this.filterByGPU(),
-      firstByName: this.sortByString(),
-      firstByType: this.sortByString(),
-      firstByAge: this.sortByNumber()
+      howManyGPU: this.filterByGPU(robots),
+      firstByName: this.sortByString(robots),
+      firstByType: this.sortByString(robots),
+      firstByAge: this.sortByNumber(robots)
     };
   }
 
@@ -53,15 +53,15 @@ export class SummaryComponent implements OnInit {
     this.parts = parts;
   }
 
-  filterByGPU() {
+  filterByGPU(data) {
     return null;
   }
 
-  sortByNumber() {
+  sortByNumber(data) {
     return null;
   }
 
-  sortByString() {
+  sortByString(data) {
     return null;
   }
 

@@ -36,18 +36,18 @@ describe('SummaryComponent', () => {
     });
   });
   describe('SummaryComponent.setRobotsData', () => {
-    it('should do filtering and sorting functions for robots', () => {
-      // implement
+    it('should call filtering and sorting functions for robots', () => {
+      // implement with spy
     });
   });
   describe('SummaryComponent.setPartsData', () => {
-    it('should do filtering and sorting functions for parts', () => {
-      // implement
+    it('should call filtering and sorting functions for parts', () => {
+      // implement with spy
     });
   });
-  describe('SummaryComponent.setPartsData', () => {
-    it('should do filtering and sorting functions for parts', () => {
-      // implement
+  describe('SummaryComponent.filterByGPU', () => {
+    it('should call return only items with type of GPU', () => {
+      // implement with mock data
     });
   });
 });

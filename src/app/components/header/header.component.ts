@@ -13,6 +13,12 @@ import { Component, OnInit } from '@angular/core';
       <button routerLink="/parts" routerLinkActive="selected">
         Parts
       </button>
+      <button routerLink="/summary" routerLinkActive="selected">
+        Summary
+      </button>
+      <button routerLink="/counter" routerLinkActive="selected">
+        Counter
+      </button>
     </nav>
   `,
   styleUrls: ['./header.component.scss']

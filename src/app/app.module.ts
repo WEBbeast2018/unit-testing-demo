@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { SummaryComponent } from './components/summary/summary.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     PartListComponent,
     RobotListComponent,
     HeaderComponent,
-    SummaryComponent
+    SummaryComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
